@@ -2,17 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::get('/', function () {
     // dati generati casualmente da chatgpt
      $users = [
@@ -22,6 +11,25 @@ Route::get('/', function () {
         ['name' => 'Francesca Neri', 'email' => 'francesca.neri@example.com'],
         ['name' => 'Paolo Gialli', 'email' => 'paolo.gialli@example.com']
     ];
+    $title = 'Home';
+    $links = ['Home', 'About', 'Services', 'Contact'];
+    return view('home', compact('users', 'title', 'links'));
+})->name('Home');
 
-    return view('home', compact('users'));
-});
+Route::get('/about', function () {
+    $title = 'About';
+    $links = ['Home', 'About', 'Services', 'Contact'];
+    return view('about', compact('title', 'links'));
+})->name('About');
+
+Route::get('/services', function () {
+    $title = 'Services';
+    $links = ['Home', 'About', 'Services', 'Contact'];
+    return view('about', compact('title', 'links'));
+})->name('Services');
+
+Route::get('/contact', function () {
+    $title = 'Contact';
+    $links = ['Home', 'About', 'Services', 'Contact'];
+    return view('about', compact('title', 'links'));
+})->name('Contact');
