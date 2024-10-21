@@ -22,6 +22,7 @@
                     {{ $title }}
                 </h3>
                 <ul class="list-unstyled d-flex align-items-center justify-content-center align-items-center m-0">
+                {{-- for each per iterare su tutti i link --}}
                    @foreach ($links as $singleLink)
                    <li class="d-flex align-items-center justify-content-center ps-3"><a href='{{route($singleLink)}}' class="text-decoration-none text-reset">{{$singleLink}}</a></li>
                    @endforeach
@@ -32,14 +33,6 @@
             <h1 class="fw-bold text-center p-3">
                 Hello World
             </h1>
-            <ul>
-                @foreach ($users as $singleUser)
-                <li class="mb-3">
-                    Nome: {{ $singleUser['name'] }} <br>
-                    Email: {{ $singleUser['email'] }}
-                </li>
-                @endforeach
-            </ul>
         </main>
     </div>
 

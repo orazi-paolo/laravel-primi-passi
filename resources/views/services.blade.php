@@ -24,6 +24,7 @@
                     {{ $title }}
                 </h3>
                 <ul class="list-unstyled d-flex align-items-center justify-content-center align-items-center m-0">
+                    {{-- for each per iterare su tutti i link --}}
                     @foreach ($links as $singleLink)
                     <li class="d-flex align-items-center justify-content-center ps-3"><a href='{{route($singleLink)}}'
                             class="text-decoration-none text-reset">{{$singleLink}}</a></li>
