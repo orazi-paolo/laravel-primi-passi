@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    // dati generati casualmente da chatgpt
+     $users = [
+        ['name' => 'Mario Rossi', 'email' => 'mario.rossi@example.com'],
+        ['name' => 'Luca Bianchi', 'email' => 'luca.bianchi@example.com'],
+        ['name' => 'Giulia Verdi', 'email' => 'giulia.verdi@example.com'],
+        ['name' => 'Francesca Neri', 'email' => 'francesca.neri@example.com'],
+        ['name' => 'Paolo Gialli', 'email' => 'paolo.gialli@example.com']
+    ];
+
+    return view('home', compact('users'));
 });
